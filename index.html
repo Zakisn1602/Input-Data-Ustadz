@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Ustadz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Input Data Ustadz</h1>
+        <form id="ustadzForm">
+            <div class="form-group">
+                <label for="nip">NIP:</label>
+                <input type="text" id="nip" required>
+            </div>
+            <div class="form-group">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="namaArab">Nama Arab:</label>
+                <input type="text" id="namaArab">
+            </div>
+            <div class="form-group">
+                <label for="tempatLahir">Tempat Lahir:</label>
+                <input type="text" id="tempatLahir" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggalLahir">Tanggal Lahir:</label>
+                <input type="date" id="tanggalLahir" required>
+            </div>
+            <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin:</label>
+                <select id="jenisKelamin" required>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat:</label>
+                <textarea id="alamat" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="noHp">No. HP:</label>
+                <input type="tel" id="noHp" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group">
+                <button type="submit">Simpan Data</button>
+            </div>
+        </form>
+        <p id="message"></p>
+    </div>
+</body>
+</html>
