@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login Pondok</title>
-  <!-- Import Google Fonts: Montserrat & Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <!-- Import Google Fonts: Montserrat dan Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
     /* Reset dasar */
     * {
@@ -17,59 +17,58 @@
       font-family: 'Inter', sans-serif;
       background-color: #fff;
       color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
     }
     .container {
-      max-width: 400px;
       width: 100%;
+      max-width: 400px;
       padding: 40px;
-      border: 1px solid #000;
-      border-radius: 20px;
-      text-align: center;
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 32px;
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 30px;
     }
     form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+    }
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
     }
     input {
-      padding: 12px;
       font-size: 16px;
-      border: 1px solid #000;
-      border-radius: 10px;
-      background-color: #fff;
-    }
-    input:focus {
+      padding: 8px 4px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #000;
+      margin-bottom: 20px;
       outline: none;
-      border-color: #28a745; /* sedikit aksen hijau */
     }
     button {
-      padding: 12px;
-      font-size: 16px;
+      font-size: 14px;
+      padding: 8px 16px;
       background: transparent;
-      border: 2px solid #28a745; /* hijau tipis */
-      color: #000;
-      border-radius: 50px; /* bentuk oval */
+      border: 1px solid #000;
+      border-radius: 20px;
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
+      align-self: center;
     }
     button:hover {
-      background: #28a745;
+      background: #000;
       color: #fff;
     }
     .info {
       margin-top: 20px;
+      text-align: center;
       font-size: 14px;
-      color: #000;
     }
   </style>
 </head>
@@ -77,20 +76,24 @@
   <div class="container">
     <h1>Login Pondok</h1>
     <form id="loginForm">
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Masukkan email Anda" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Masukkan password Anda" required>
       <button type="submit">Login</button>
     </form>
     <div class="info" id="info"></div>
   </div>
 
   <script>
+    // Event listener untuk form login
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       
-      // Placeholder untuk logika autentikasi, misalnya dengan Firebase Auth nanti
+      // Placeholder untuk logika autentikasi, misalnya integrasi dengan Firebase Auth
+      // Di sini, hanya menampilkan informasi login sebagai contoh
       document.getElementById('info').textContent = "Logged in as: " + email;
     });
   </script>
