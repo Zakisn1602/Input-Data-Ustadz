@@ -1,60 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Data Ustadz</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manajemen Pondok</title>
+  <!-- Import Google Fonts: Montserrat & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      margin-bottom: 24px;
+      text-align: center;
+      color: #111;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #555;
+    }
+    input {
+      font-size: 16px;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      outline: none;
+      border-color: #007BFF;
+    }
+    button {
+      font-size: 16px;
+      padding: 12px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .info {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Input Data Ustadz</h1>
-        <form id="ustadzForm">
-            <div class="form-group">
-                <label for="nip">NIP:</label>
-                <input type="text" id="nip" required>
-            </div>
-            <div class="form-group">
-                <label for="nama">Nama Lengkap:</label>
-                <input type="text" id="nama" required>
-            </div>
-            <div class="form-group">
-                <label for="namaArab">Nama Arab:</label>
-                <input type="text" id="namaArab">
-            </div>
-            <div class="form-group">
-                <label for="tempatLahir">Tempat Lahir:</label>
-                <input type="text" id="tempatLahir" required>
-            </div>
-            <div class="form-group">
-                <label for="tanggalLahir">Tanggal Lahir:</label>
-                <input type="date" id="tanggalLahir" required>
-            </div>
-            <div class="form-group">
-                <label for="jenisKelamin">Jenis Kelamin:</label>
-                <select id="jenisKelamin" required>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="alamat">Alamat:</label>
-                <textarea id="alamat" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="noHp">No. HP:</label>
-                <input type="tel" id="noHp" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email">
-            </div>
-            <div class="form-group">
-                <button type="submit">Simpan Data</button>
-            </div>
-        </form>
-        <p id="message"></p>
-    </div>
+  <div class="container">
+    <h1>Login Pondok</h1>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Masukkan email Anda" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Masukkan password Anda" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    <div class="info" id="info"></div>
+  </div>
+
+  <script>
+    // Event listener untuk form login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Ambil nilai input email dan password
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Logika autentikasi placeholder (integrasikan dengan Firebase Auth atau API Anda)
+      // Misalnya, jika autentikasi berhasil:
+      document.getElementById('info').textContent = "Logged in as: " + email;
+
+      // Jika terjadi error, tampilkan pesan error
+      // document.getElementById('info').textContent = "Error: [pesan error]";
+    });
+  </script>
 </body>
 </html>
